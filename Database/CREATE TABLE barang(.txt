@@ -1,0 +1,20 @@
+CREATE TABLE barang(
+    id_barang int PRIMARY KEY,
+    nama_barang varchar(35),
+    id_jenis int,
+    harga varchar(40)
+    stock int);
+
+CREATE TABLE jenis(
+    id_jenis int PRIMARY KEY,
+    nama_jenis varchar(35));
+
+INSERT INTO jenis VALUES
+(1,'makanan'),
+(2,'minuman'),
+(3,'peralatan');
+
+INSERT INTO barang VALUES
+(1,'roti',1,'rp.3000',20),
+(2,'teh',2,'rp.4000',25),
+(3,'pensil',3,'rp.2000',50);
