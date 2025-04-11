@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-house"></i>Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,8 +29,8 @@
     </nav>
 
     <div class="container">
-    <h1>tambah barang</h1>
-    <a class="btn btn-primary" href="view_tambah.php">tambah barang</a>
+    <h1><i class="fa-solid fa-feather-pointed"></i>Tambah Barang</h1>
+    <a class="btn btn-primary" href="view_tambah.php"><i class="fa-solid fa-plus"></i>Tambah Barang</a>
     <br><br>
     <table class="table table-bordered table-striprd">
         <thead class="table-dark">
@@ -40,6 +41,7 @@
             <th>id_jenis</th>
             <th>harga</th>
             <th>stock</th>
+    
         </tr>
         </thead>
        
@@ -58,8 +60,14 @@
             <td><?php echo $result['id_jenis'] ?></td>
             <td><?php echo $result['harga'] ?></td>
             <td><?php echo $result['stock'] ?></td>
-            <td>
-                <a class="btn btn-warning">Edit</a>
+          
+    <td>
+            <a class="btn btn-warning btn-sm" href="view_edit.php?id=<?php echo $result['id_barang']; ?>">
+            <i class="fa-solid fa-pen-to-square"></i> Edit</a>
+            <a href="proses_hapus.php?id=<?php echo $result['id_barang']; ?>"
+            onclick="return confirm('Apakah anda sudah yakin?')"
+             class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i>Hapus</a>
+    </td>
             </td>
         </tr>
         <?php
